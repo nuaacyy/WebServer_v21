@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<server>
+	<connector port="8088" protocol="http/1.1" threadPool="50" URIEncoding="utf-8"/>
+</server>
