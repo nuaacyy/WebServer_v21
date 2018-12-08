@@ -4,6 +4,7 @@ import java.util.Map;
 
 /**
  * session
+ * 数据类
  */
 public class HTTPSession {
     private String id;
