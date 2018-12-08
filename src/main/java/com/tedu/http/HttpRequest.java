@@ -6,6 +6,9 @@ import java.net.URLDecoder;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import com.tedu.model.Cookie;
+import com.tedu.model.HTTPSession;
 import org.b3log.latke.logging.Logger;
 
 import com.tedu.context.HttpContext;
@@ -55,7 +58,8 @@ public class HttpRequest {
 	 */
 	private Map<String, String> headers=new HashMap<String, String>();
 	
-	
+	private Cookie[] cookies;
+	private HTTPSession httpSession;
 	
 	
 	
