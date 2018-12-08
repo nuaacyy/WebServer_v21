@@ -8,17 +8,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.omg.CORBA.Any;
-import org.omg.CORBA.Context;
-import org.omg.CORBA.ContextList;
-import org.omg.CORBA.Environment;
-import org.omg.CORBA.ExceptionList;
-import org.omg.CORBA.NVList;
-import org.omg.CORBA.NamedValue;
-import org.omg.CORBA.Object;
-import org.omg.CORBA.Request;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.WrongTransaction;
+import org.b3log.latke.logging.Logger;
+
 
 import com.tedu.context.HttpContext;
 import com.tedu.context.ServletContext;
@@ -30,6 +21,10 @@ import com.tedu.context.ServletContext;
  *
  */
 public class HttpResponse {
+	/**
+	 * Logger.
+	 */
+	private static final Logger LOGGER = Logger.getLogger(HttpRequest.class);
 	/*
 	 * 通过这个输出流将响应信息发送给客户端
 	 */
@@ -185,9 +180,7 @@ public class HttpResponse {
 		//设置响应头：Location
 		this.headers.put(HttpContext.HEADER_LACATION, url);
 		this.flush();
-		
-	
-		System.out.println("response对象销毁");
+
 		
 	}
 	

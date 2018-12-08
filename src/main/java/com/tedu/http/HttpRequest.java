@@ -3,16 +3,15 @@ package com.tedu.http;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLDecoder;
-import java.util.Arrays;
-import java.util.Collection;
+
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
+import org.b3log.latke.logging.Logger;
 
 import com.tedu.context.HttpContext;
 import com.tedu.context.ServletContext;
 
-import java.util.Map.Entry;
+
 
 /**
  * 当前类的每个实例用于表示一个具体的客户端发送过来的HTTP请求
@@ -20,6 +19,10 @@ import java.util.Map.Entry;
  *
  */
 public class HttpRequest {
+	/**
+	 * Logger.
+	 */
+	private static final Logger LOGGER = Logger.getLogger(HttpRequest.class);
 	
 	/*
 	 * 用来读取客户端发送过来数据的输入流，
@@ -63,7 +66,6 @@ public class HttpRequest {
 	 * @param in
 	 */
 	public HttpRequest (InputStream in) throws EmptyRequestException{
-		System.out.println("产生一个新的request对象");
 		this.in=in;
 		/*
 		 * 每个请求包含三部分解析
